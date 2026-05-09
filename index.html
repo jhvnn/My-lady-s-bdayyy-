@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Thakku 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background: radial-gradient(circle at top,#2a0033,#000);
+  color:white;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  font-family:'Noto Sans Malayalam',sans-serif;
+}
+
+/* SECTION */
+.section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px 20px;
+  transition:1s;
+}
+
+.hidden{
+  opacity:0;
+  pointer-events:none;
+  transform:scale(0.95);
+}
+
+/* QUESTION */
+.question{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(1.8rem,6.5vw,2.3rem);
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+button{
+  padding:14px 28px;
+  margin:10px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#ff4d6d,#ff0080);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+  width:220px;
+  max-width:80%;
+}
+button:hover{transform:scale(1.05);}
+
+/* BIRTHDAY */
+#birthday{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  opacity:0;
+  transition:1.5s ease;
+}
+
+.fade-in{opacity:1 !important;}
+
+.big-title{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(1.8rem,6vw,2.5rem);
+  line-height:1.4;
+  margin-bottom:25px;
+  text-shadow:0 0 15px rgba(255,0,128,0.6);
+}
+
+.line{
+  opacity:0;
+  transform:translateY(20px);
+  margin:14px 0;
+  font-size:clamp(1rem,4.5vw,1.15rem);
+  line-height:1.8;
+  max-width:650px;
+  transition:1s ease;
+}
+
+.scroll-text{
+  margin-top:30px;
+  font-size:14px;
+  opacity:0;
+  animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+  0%,100%{opacity:0.4;}
+  50%{opacity:1;}
+}
+
+/* GALLERY */
+#gallery{
+  padding:60px 20px;
+  background:#111;
+}
+
+.photo{
+  margin-bottom:50px;
+  text-align:center;
+}
+
+.photo img{
+  width:100%;
+  max-width:400px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(255,0,128,0.4);
+  transition:0.4s;
+}
+
+.photo img:hover{transform:scale(1.03);}
+
+.photo p{
+  margin-top:12px;
+  font-size:15px;
+  opacity:0.9;
+}
+
+/* EMOJI RAIN */
+.emoji-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.emoji{
+  position:absolute;
+  top:-50px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-50px);opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(110vh);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" src="assets/mylove.mp3" loop></audio>
+
+<div class="emoji-bg" id="emojiContainer"></div>
+
+<!-- QUESTIONS -->
+<div class="section" id="questionSection">
+  <h2 class="question" id="questionText">Do you love me 🥺?</h2>
+  <div>
+    <button onclick="nextQuestion()">Yes 🙈</button>
+    <button onclick="nextQuestion()">Definitely 🧿💋</button>
+  </div>
+</div>
+
+<!-- BIRTHDAY -->
+<div id="birthday">
+  <h1 class="big-title">
+    Happy Birthday Thakkuveyyy 💖
+  </h1>
+
+  <div id="lines">
+    <p class="line">Nammal sett avum enn njn vicharichilla 🥺</p>
+    <p class="line">But nammal sett ayappo enikk nee illathe pattanilla 🧿😭</p>
+    <p class="line">Nee enikk ente wifeine pole ahn , sorry nee ente wife thanne ahn 😚😘</p>
+    <p class="line">Nee ennum ente koode venam 🧿🙈</p>
+    <p class="line">Ennum 🧿💋</p>
+    <p class="line">Wish you the best HAPPY BIRTHDAY my love 😘💞</p>
+    <p class="line">Love you so muchh THAKKUVEYYYY 🧿🎀</p>
+  </div>
+
+  <div class="scroll-text" id="scrollMsg">
+    ↓ Scroll down ↓
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery">
+  <div class="photo"><img src="images/1.jpg"><p>Ninakk enth bhangi aanadi 🙈</p></div>
+  <div class="photo"><img src="images/2.jpg"><p>Ente sundhari penne 🤭</p></div>
+  <div class="photo"><img src="images/3.jpg"><p>Bharya penneyy 💋</p></div>
+  <div class="photo"><img src="images/4.jpg"><p>Ente mathram vaava 🧿</p></div>
+  <div class="photo"><img src="images/5.jpg"><p>My cutie patootie 🎀</p></div>
+  <div class="photo"><img src="images/6.jpg"><p>My darlingeyyy 😚</p></div>
+  <div class="photo"><img src="images/7.jpg"><p>My undapakru 😋</p></div>
+  <div class="photo"><img src="images/8.jpg"><p>Mine only mine 💌</p></div>
+  <div class="photo"><img src="images/9.jpg"><p>Ente kaatupoth 😁</p></div>
+  <div class="photo"><img src="images/10.jpg"><p>My new year lady 🧿💋</p></div>
+</div>
+
+<script>
+let step=0;
+let musicStarted=false;
+
+const questions=[
+"Do you love me 🥺?",
+"Will you marry me 😻💖?",
+"Want to live with me forever ♾️😘?"
+];
+
+function nextQuestion(){
+if(!musicStarted){
+document.getElementById("bgMusic").play();
+musicStarted=true;
+}
+
+step++;
+
+if(step<questions.length){
+document.getElementById("questionText").innerText=questions[step];
+}else{
+const q=document.getElementById("questionSection");
+const b=document.getElementById("birthday");
+
+q.classList.add("hidden");
+
+setTimeout(()=>{
+b.classList.add("fade-in");
+b.scrollIntoView({behavior:"smooth"});
+showLines();
+},600);
+}
+}
+
+function showLines(){
+const lines=document.querySelectorAll(".line");
+lines.forEach((line,index)=>{
+setTimeout(()=>{
+line.style.opacity="1";
+line.style.transform="translateY(0)";
+if(index===lines.length-1){
+document.getElementById("scrollMsg").style.opacity="1";
+}
+},index*1200);
+});
+}
+
+/* Emoji Rain */
+const emojis=["❤️","💖","💞","💘","💝","💋","😘","🌹","♾️","😍","🥰"];
+const container=document.getElementById("emojiContainer");
+
+function createEmoji(){
+const emoji=document.createElement("div");
+emoji.classList.add("emoji");
+emoji.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+emoji.style.left=Math.random()*100+"vw";
+emoji.style.fontSize=(Math.random()*18+18)+"px";
+emoji.style.animationDuration=(Math.random()*5+5)+"s";
+container.appendChild(emoji);
+setTimeout(()=>emoji.remove(),10000);
+}
+setInterval(createEmoji,300);
+</script>
+
+</body>
+  </html>
